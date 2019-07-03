@@ -1,6 +1,11 @@
-variable "namespace" {}
-variable "stage" {}
-variable "name" {}
+variable "namespace" {
+}
+
+variable "stage" {
+}
+
+variable "name" {
+}
 
 variable "enabled" {
   description = "Set to false to prevent the module from creating any resources"
@@ -8,19 +13,20 @@ variable "enabled" {
 }
 
 variable "delimiter" {
-  type        = "string"
+  type        = string
   default     = "-"
   description = "Delimiter to be used between `name`, `namespace`, `stage`, etc."
 }
 
 variable "attributes" {
-  type        = "list"
+  type        = list(string)
   default     = []
   description = "Additional attributes (e.g. `policy` or `role`)"
 }
 
 variable "tags" {
-  type        = "map"
+  type        = map(string)
   default     = {}
   description = "Additional tags (e.g. `map('BusinessUnit`,`XYZ`)"
 }
+
